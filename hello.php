@@ -10,10 +10,6 @@ do {
 
 echo $user_name . "さん、こんにちは！\n";
 
-// 日時を取得（日本時間）
-date_default_timezone_set('Asia/Tokyo');
-$timestamp = date('Y-m-d H:i:s');
-
-// ログに記録
-$log_entry = $timestamp . " - " . $user_name . "\n";
-file_put_contents('log.txt', $log_entry, FILE_APPEND);
+$timestamp = new DateTime('now', new DateTimeZone('Asia/Tokyo'));
+$log = $timestamp->format('Y-m-d H:i:s') . " - " . $user_name . "\n";
+file_put_contents('log.txt', $log, FILE_APPEND);
