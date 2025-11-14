@@ -16,4 +16,4 @@ $timestamp = date('Y-m-d H:i:s');
 
 // ログに記録
 $log_entry = $timestamp . " - " . $user_name . "\n";
-file_put_contents('name_log.txt', $log_entry, FILE_APPEND);
+file_put_contents('log.txt', $log_entry, FILE_APPEND);
